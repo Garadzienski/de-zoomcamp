@@ -12,9 +12,9 @@ root@ba52a365c344:/# pip --version \
 **Question 2. Understanding Docker networking and docker-compose**  \
 Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?  \
 **hostname: db  \
-port: 5432**  \
+port: 5432**  
 
-Preparing postgres  \
+Preparing postgres  
 
 For postgres exercises I created docker-compose.yaml file
 after running  "docker-compose up --build" connected to pgadmin and added the connection
