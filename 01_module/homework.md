@@ -90,3 +90,6 @@ GROUP BY pickupzone.zone, dropoffzone.zone
 ORDER BY max_tip DESC 
 LIMIT 1; 
 **-- output JFK Airport 87.3**
+
+**Question 7. Terraform Workflow**
+**terraform init, terraform apply -auto-approve, terraform destroy**
