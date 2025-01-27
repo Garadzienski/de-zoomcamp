@@ -4,23 +4,17 @@ After installing all the necessary components I have started to do homework task
 Run docker with the python:3.12.8 image in an interactive mode, use the entrypoint bash.
 What's the version of pip in the image?
 
--- running docker with python 3.12.8
+-- running docker with python 3.12.8 \
 docker run -it python:3.12.8 bash \
 root@ba52a365c344:/# pip --version \
 **pip 24.3.1**
 
-**Question 2. Understanding Docker networking and docker-compose**
-Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?
-**hostname: db
-port: 5432**
+**Question 2. Understanding Docker networking and docker-compose**  \
+Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?  \
+**hostname: db  \
+port: 5432**  \
 
-Preparing postgres
-Run Postgres and load data as shown in the videos We'll use the green taxi trips from October 2019:
-
-wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz
-You will also need the dataset with zones:
-
-wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv
+Preparing postgres  \
 
 For postgres exercises I created docker-compose.yaml file
 after running  "docker-compose up --build" connected to pgadmin and added the connection
