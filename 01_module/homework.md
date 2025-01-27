@@ -39,7 +39,7 @@ SELECT
 	SUM(CASE WHEN trip_distance <= 1 THEN 1 ELSE 0 END) AS less_1_mile,
 	SUM(CASE WHEN trip_distance > 1 AND trip_distance <= 3 THEN 1 ELSE 0 END) AS btw_1_3_miles,
 	SUM(CASE WHEN trip_distance > 3 AND trip_distance <= 7 THEN 1 ELSE 0 END) AS btw_3_7_miles,
-	SUM(CASE WHEN trip_distance > 7 AND trip_distance <= 10 THEN 1 ELSE 0 END) AS btw_3_7_miles,
+	SUM(CASE WHEN trip_distance > 7 AND trip_distance <= 10 THEN 1 ELSE 0 END) AS btw_7_10_miles,
 	SUM(CASE WHEN trip_distance > 10 THEN 1 ELSE 0 END) AS over_10_miles
 FROM tripdata
 WHERE lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31' ;
