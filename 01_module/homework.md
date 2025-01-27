@@ -5,8 +5,8 @@ Run docker with the python:3.12.8 image in an interactive mode, use the entrypoi
 What's the version of pip in the image?
 
 -- running docker with python 3.12.8
-docker run -it python:3.12.8 bash
-root@ba52a365c344:/# pip --version
+docker run -it python:3.12.8 bash \
+root@ba52a365c344:/# pip --version \
 **pip 24.3.1**
 
 **Question 2. Understanding Docker networking and docker-compose**
