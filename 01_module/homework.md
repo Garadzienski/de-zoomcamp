@@ -36,7 +36,7 @@ SELECT
 	SUM(CASE WHEN trip_distance > 7 AND trip_distance <= 10 THEN 1 ELSE 0 END) AS btw_7_10_miles,
 	SUM(CASE WHEN trip_distance > 10 THEN 1 ELSE 0 END) AS over_10_miles
 FROM tripdata
-WHERE lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31' ;
+WHERE lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31'; \
 **-- output:   104,802; 198,924; 109,603; 27,678; 35,189**
 
 /* **Question 4. Longest trip for each day** \
@@ -48,7 +48,7 @@ SELECT 	lpep_pickup_datetime::DATE ,
 FROM tripdata 
 GROUP BY lpep_pickup_datetime::DATE 
 ORDER BY max_distance DESC 
-LIMIT 1; 
+LIMIT 1; -- \
 **-- output 2019-10-31**
 
 /*	**Question 5. Three biggest pickup zones** \
@@ -63,7 +63,7 @@ WHERE lpep_pickup_datetime::DATE = '2019-10-18'
 GROUP BY pu_zone.zone
 HAVING SUM(td.total_amount) > 13000
 ORDER BY total_amount DESC
-LIMIT 3; 
+LIMIT 3; -- \
 **-- output:  "East Harlem North"	18686.68    "East Harlem South"	16797.26    "Morningside Heights" 13029.79**
 
 -- **Question 6. Largest tip** \
