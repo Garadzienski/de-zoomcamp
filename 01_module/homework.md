@@ -1,18 +1,18 @@
 After installing all the necessary components I have started to do homework tasks.
 
-Question 1. Understanding docker first run
+**Question 1. Understanding docker first run**
 Run docker with the python:3.12.8 image in an interactive mode, use the entrypoint bash.
 What's the version of pip in the image?
 
 -- running docker with python 3.12.8
 docker run -it python:3.12.8 bash
 root@ba52a365c344:/# pip --version
-pip 24.3.1
+**pip 24.3.1**
 
-Question 2. Understanding Docker networking and docker-compose
+**Question 2. Understanding Docker networking and docker-compose**
 Given the following docker-compose.yaml, what is the hostname and port that pgadmin should use to connect to the postgres database?
-hostname: db
-port: 5432
+**hostname: db
+port: 5432**
 
 Preparing postgres
 Run Postgres and load data as shown in the videos We'll use the green taxi trips from October 2019:
@@ -27,7 +27,7 @@ after running  "docker-compose up --build" connected to pgadmin and added the co
 
 Postgres related questions:
 
--- Question 3. Trip Segmentation Count
+-- **Question 3. Trip Segmentation Count**
 /* During the period of October 1st 2019 (inclusive) and November 1st 2019 (exclusive), 
 	how many trips, respectively, happened:
 		Up to 1 mile
@@ -43,9 +43,9 @@ SELECT
 	SUM(CASE WHEN trip_distance > 10 THEN 1 ELSE 0 END) AS over_10_miles
 FROM tripdata
 WHERE lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31' ;
--- output:   104,802; 198,924; 109,603; 27,678; 35,189
+**-- output:   104,802; 198,924; 109,603; 27,678; 35,189**
 
-/* Question 4. Longest trip for each day
+/* **Question 4. Longest trip for each day**
 	Which was the pick up day with the longest trip distance? Use the pick up time for your calculations.
 	Tip: For every day, we only care about one single trip with the longest distance. */
 
@@ -55,9 +55,9 @@ FROM tripdata
 GROUP BY lpep_pickup_datetime::DATE 
 ORDER BY max_distance DESC 
 LIMIT 1; 
--- output 2019-10-31
+**-- output 2019-10-31**
 
-/*	Question 5. Three biggest pickup zones
+/*	**Question 5. Three biggest pickup zones**
 	Which were the top pickup locations with over 13,000 in total_amount (across all trips) for 2019-10-18?
 	Consider only lpep_pickup_datetime when filtering by date. */
 SELECT 	pu_zone.zone AS pickup_zone,
@@ -70,9 +70,9 @@ GROUP BY pu_zone.zone
 HAVING SUM(td.total_amount) > 13000
 ORDER BY total_amount DESC
 LIMIT 3; 
--- output:  "East Harlem North"	18686.68    "East Harlem South"	16797.26    "Morningside Heights" 13029.79
+**-- output:  "East Harlem North"	18686.68    "East Harlem South"	16797.26    "Morningside Heights" 13029.79**
 
--- Question 6. Largest tip
+-- **Question 6. Largest tip**
 /* For the passengers picked up in October 2019 in the zone named "East Harlem North" which was the drop off zone that had the largest tip?
 Note: it's tip , not trip.
 We need the name of the zone, not the ID. */
@@ -89,4 +89,4 @@ WHERE pickupzone.zone = 'East Harlem North'
 GROUP BY pickupzone.zone, dropoffzone.zone 
 ORDER BY max_tip DESC 
 LIMIT 1; 
--- output JFK Airport 87.3
+**-- output JFK Airport 87.3**
