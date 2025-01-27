@@ -21,7 +21,7 @@ after running  "docker-compose up --build" connected to pgadmin and added the co
 
 Postgres related questions:
 
--- **Question 3. Trip Segmentation Count**
+-- **Question 3. Trip Segmentation Count** \
 /* During the period of October 1st 2019 (inclusive) and November 1st 2019 (exclusive), 
 	how many trips, respectively, happened:
 		Up to 1 mile
@@ -39,7 +39,7 @@ FROM tripdata
 WHERE lpep_dropoff_datetime::DATE BETWEEN '2019-10-01' AND '2019-10-31' ;
 **-- output:   104,802; 198,924; 109,603; 27,678; 35,189**
 
-/* **Question 4. Longest trip for each day**
+/* **Question 4. Longest trip for each day** \
 	Which was the pick up day with the longest trip distance? Use the pick up time for your calculations.
 	Tip: For every day, we only care about one single trip with the longest distance. */
 
@@ -51,7 +51,7 @@ ORDER BY max_distance DESC
 LIMIT 1; 
 **-- output 2019-10-31**
 
-/*	**Question 5. Three biggest pickup zones**
+/*	**Question 5. Three biggest pickup zones** \
 	Which were the top pickup locations with over 13,000 in total_amount (across all trips) for 2019-10-18?
 	Consider only lpep_pickup_datetime when filtering by date. */
 SELECT 	pu_zone.zone AS pickup_zone,
@@ -66,7 +66,7 @@ ORDER BY total_amount DESC
 LIMIT 3; 
 **-- output:  "East Harlem North"	18686.68    "East Harlem South"	16797.26    "Morningside Heights" 13029.79**
 
--- **Question 6. Largest tip**
+-- **Question 6. Largest tip** \
 /* For the passengers picked up in October 2019 in the zone named "East Harlem North" which was the drop off zone that had the largest tip?
 Note: it's tip , not trip.
 We need the name of the zone, not the ID. */
@@ -85,5 +85,5 @@ ORDER BY max_tip DESC
 LIMIT 1; 
 **-- output JFK Airport 87.3**
 
-**Question 7. Terraform Workflow**
+**Question 7. Terraform Workflow** \
 **terraform init, terraform apply -auto-approve, terraform destroy**
